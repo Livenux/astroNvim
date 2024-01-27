@@ -50,7 +50,17 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "regols"
       -- "pyright"
+    },
+    config = {
+      regols = function()
+        return {
+          cmd = {"regols"};
+          filetypes = {"rego"};
+          root_dir = require("lspconfig.util").root_pattern(".git");
+        }
+      end,
     },
   },
 
